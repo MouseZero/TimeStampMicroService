@@ -8,24 +8,20 @@ var app = express()
 app.get('/:dateArg', function (req, res) {
 
 	var dateArg = req.params.dateArg
-
 	var myDate = new Date(parseInt(dateArg) || dateArg)
+	var humanReadableDate = null
 
-	var testwtf =''
-
-	humanReadableDate = null
-
-	if( myDate.toJSON() )
+	if( myDate.toJSON() ){
 		humanReadableDate = MONTHS[myDate.getUTCMonth()] + 
 		" " + 
 		myDate.getUTCDate() + 
 		", " + 
 		myDate.getUTCFullYear()
+  }
 	
   res.send({
 		unix: myDate.getTime(),
 		natural: humanReadableDate,
-		test: myDate,
 	})
 })
 
