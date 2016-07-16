@@ -4,7 +4,7 @@
   "description": "Hello World",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ."
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/mousezero/TimeStampMicroService/issues"
   },
-  "homepage": "https://github.com/mousezero/TimeStampMicroService#readme"
+  "homepage": "https://github.com/mousezero/TimeStampMicroService#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
