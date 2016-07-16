@@ -11,7 +11,12 @@ app.get('/:dateArg', function (req, res) {
 
 	var myDate = new Date(parseInt(dateArg) || dateArg)
 
-	var humanReadableDate = MONTHS[myDate.getUTCMonth()] + 
+	var testwtf =''
+
+	humanReadableDate = null
+
+	if( myDate.toJSON() )
+		humanReadableDate = MONTHS[myDate.getUTCMonth()] + 
 		" " + 
 		myDate.getUTCDate() + 
 		", " + 
@@ -20,6 +25,7 @@ app.get('/:dateArg', function (req, res) {
   res.send({
 		unix: myDate.getTime(),
 		natural: humanReadableDate,
+		test: myDate,
 	})
 })
 
