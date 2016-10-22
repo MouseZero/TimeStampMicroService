@@ -22,8 +22,7 @@ app.get('/:dateArg', function (req, res) {
 	
   res.send({
 		unix: myDate.getTime() / 1000,
-		natural: humanReadableDate,
-		test: myDate.getTime()
+		natural: humanReadableDate
 	})
 })
 
