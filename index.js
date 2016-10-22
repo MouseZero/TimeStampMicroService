@@ -8,7 +8,8 @@ var app = express()
 app.get('/:dateArg', function (req, res) {
 
 	var dateArg = req.params.dateArg
-	var myDate = new Date(parseInt(dateArg) || dateArg)
+	var time = (parseInt(dateArg)) ? parseInt(dateArg) * 1000 : dateArg
+	var myDate = new Date(time)
 	var humanReadableDate = null
 
 	if( myDate.toJSON() ){
@@ -20,8 +21,9 @@ app.get('/:dateArg', function (req, res) {
   }
 	
   res.send({
-		unix: myDate.getTime(),
+		unix: myDate.getTime() / 1000,
 		natural: humanReadableDate,
+		test: myDate.getTime()
 	})
 })
 
